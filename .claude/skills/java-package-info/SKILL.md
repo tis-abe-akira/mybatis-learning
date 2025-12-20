@@ -7,8 +7,6 @@ description: Generate package-info.java files for Java packages. Use when the us
 
 Generate `package-info.java` files for Java packages with Javadoc comments.
 
-If you are GitHub Copilot, then you write a author tag with your name and the current year in the generated files.
-
 ## Quick Start
 
 Generate package-info.java files for a Java project:
