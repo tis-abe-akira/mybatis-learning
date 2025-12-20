@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.example.mybatislearning.MyBatisApplicationTests" time="0.031" tests="6" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="21"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/Users/akiraabe/practice/mybatis-learning/target/test-classes:/Users/akiraabe/practice/mybatis-learning/target/classes:/Users/akiraabe/.m2/repository/org/springframework/boot/spring-boot-starter-web/3.2.0/spring-boot-starter-web-3.2.0.jar:/Users/akiraabe/.m2/repository/org/springframework/boot/spring-boot-starter/3.2.0/spring-boot-starter-3.2.0.jar:/Users/akiraabe/.m2/repository/org/springframework/boot/spring-boot/3.2.0/spring-boot-3.2.0.jar:/Users/akiraabe/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/3.2.0/spring-boot-autoconfigure-3.2.0.jar:/Users/akiraabe/.m2/repository/org/springframework/boot/spring-boot-starter-logging/3.2.0/spring-boot-starter-logging-3.2.0.jar:/Users/akiraabe/.m2/repository/ch/qos/logback/logback-classic/1.4.11/logback-classic-1.4.11.jar:/Users/akiraabe/.m2/repository/ch/qos/logback/logback-core/1.4.11/logback-core-1.4.11.jar:/Users/akiraabe/.m2/repository/org/apache/logging/log4j/log4j-to-slf4j/2.21.1/log4j-to-slf4j-2.21.1.jar:/Users/akiraabe/.m2/repository/org/apache/logging/log4j/log4j-api/2.21.1/log4j-api-2.21.1.jar:/Users/akiraabe/.m2/repository/org/slf4j/jul-to-slf4j/2.0.9/jul-to-slf4j-2.0.9.jar:/Users/akiraabe/.m2/repository/jakarta/annotation/jakarta.annotation-api/2.1.1/jakarta.annotation-api-2.1.1.jar:/Users/akiraabe/.m2/repository/org/yaml/snakeyaml/2.2/snakeyaml-2.2.jar:/Users/akiraabe/.m2/repository/org/springframework/boot/spring-boot-starter-json/3.2.0/spring-boot-starter-json-3.2.0.jar:/Users/akiraabe/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.15.3/jackson-databind-2.15.3.jar:/Users/akiraabe/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.15.3/jackson-annotations-2.15.3.jar:/Users/akiraabe/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.15.3/jackson-core-2.15.3.jar:/Users/akiraabe/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jdk8/2.15.3/jackson-datatype-jdk8-2.15.3.jar:/Users/akiraabe/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.15.3/jackson-datatype-jsr310-2.15.3.jar:/Users/akiraabe/.m2/repository/com/fasterxml/jackson/module/jackson-module-parameter-names/2.15.3/jackson-module-parameter-names-2.15.3.jar:/Users/akiraabe/.m2/repository/org/springframework/boot/spring-boot-starter-tomcat/3.2.0/spring-boot-starter-tomcat-3.2.0.jar:/Users/akiraabe/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/10.1.16/tomcat-embed-core-10.1.16.jar:/Users/akiraabe/.m2/repository/org/apache/tomcat/embed/tomcat-embed-el/10.1.16/tomcat-embed-el-10.1.16.jar:/Users/akiraabe/.m2/repository/org/apache/tomcat/embed/tomcat-embed-websocket/10.1.16/tomcat-embed-websocket-10.1.16.jar:/Users/akiraabe/.m2/repository/org/springframework/spring-web/6.1.1/spring-web-6.1.1.jar:/Users/akiraabe/.m2/repository/org/springframework/spring-beans/6.1.1/spring-beans-6.1.1.jar:/Users/akiraabe/.m2/repository/io/micrometer/micrometer-observation/1.12.0/micrometer-observation-1.12.0.jar:/Users/akiraabe/.m2/repository/io/micrometer/micrometer-commons/1.12.0/micrometer-commons-1.12.0.jar:/Users/akiraabe/.m2/repository/org/springframework/spring-webmvc/6.1.1/spring-webmvc-6.1.1.jar:/Users/akiraabe/.m2/repository/org/springframework/spring-aop/6.1.1/spring-aop-6.1.1.jar:/Users/akiraabe/.m2/repository/org/springframework/spring-context/6.1.1/spring-context-6.1.1.jar:/Users/akiraabe/.m2/repository/org/springframework/spring-expression/6.1.1/spring-expression-6.1.1.jar:/Users/akiraabe/.m2/repository/org/mybatis/spring/boot/mybatis-spring-boot-starter/3.0.5/mybatis-spring-boot-starter-3.0.5.jar:/Users/akiraabe/.m2/repository/org/springframework/boot/spring-boot-starter-jdbc/3.2.0/spring-boot-starter-jdbc-3.2.0.jar:/Users/akiraabe/.m2/repository/com/zaxxer/HikariCP/5.0.1/HikariCP-5.0.1.jar:/Users/akiraabe/.m2/repository/org/springframework/spring-jdbc/6.1.1/spring-jdbc-6.1.1.jar:/Users/akiraabe/.m2/repository/org/springframework/spring-tx/6.1.1/spring-tx-6.1.1.jar:/Users/akiraabe/.m2/repository/org/mybatis/spring/boot/mybatis-spring-boot-autoconfigure/3.0.5/mybatis-spring-boot-autoconfigure-3.0.5.jar:/Users/akiraabe/.m2/repository/org/mybatis/mybatis/3.5.19/mybatis-3.5.19.jar:/Users/akiraabe/.m2/repository/org/mybatis/mybatis-spring/3.0.5/mybatis-spring-3.0.5.jar:/Users/akiraabe/.m2/repository/com/h2database/h2/2.2.224/h2-2.2.224.jar:/Users/akiraabe/.m2/repository/org/springframework/boot/spring-boot-starter-test/3.2.0/spring-boot-starter-test-3.2.0.jar:/Users/akiraabe/.m2/repository/org/springframework/boot/spring-boot-test/3.2.0/spring-boot-test-3.2.0.jar:/Users/akiraabe/.m2/repository/org/springframework/boot/spring-boot-test-autoconfigure/3.2.0/spring-boot-test-autoconfigure-3.2.0.jar:/Users/akiraabe/.m2/repository/com/jayway/jsonpath/json-path/2.8.0/json-path-2.8.0.jar:/Users/akiraabe/.m2/repository/org/slf4j/slf4j-api/2.0.9/slf4j-api-2.0.9.jar:/Users/akiraabe/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/4.0.1/jakarta.xml.bind-api-4.0.1.jar:/Users/akiraabe/.m2/repository/jakarta/activation/jakarta.activation-api/2.1.2/jakarta.activation-api-2.1.2.jar:/Users/akiraabe/.m2/repository/net/minidev/json-smart/2.5.0/json-smart-2.5.0.jar:/Users/akiraabe/.m2/repository/net/minidev/accessors-smart/2.5.0/accessors-smart-2.5.0.jar:/Users/akiraabe/.m2/repository/org/ow2/asm/asm/9.3/asm-9.3.jar:/Users/akiraabe/.m2/repository/org/assertj/assertj-core/3.24.2/assertj-core-3.24.2.jar:/Users/akiraabe/.m2/repository/net/bytebuddy/byte-buddy/1.14.10/byte-buddy-1.14.10.jar:/Users/akiraabe/.m2/repository/org/awaitility/awaitility/4.2.0/awaitility-4.2.0.jar:/Users/akiraabe/.m2/repository/org/hamcrest/hamcrest/2.2/hamcrest-2.2.jar:/Users/akiraabe/.m2/repository/org/junit/jupiter/junit-jupiter/5.10.1/junit-jupiter-5.10.1.jar:/Users/akiraabe/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.10.1/junit-jupiter-api-5.10.1.jar:/Users/akiraabe/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/Users/akiraabe/.m2/repository/org/junit/platform/junit-platform-commons/1.10.1/junit-platform-commons-1.10.1.jar:/Users/akiraabe/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/akiraabe/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.10.1/junit-jupiter-params-5.10.1.jar:/Users/akiraabe/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.10.1/junit-jupiter-engine-5.10.1.jar:/Users/akiraabe/.m2/repository/org/junit/platform/junit-platform-engine/1.10.1/junit-platform-engine-1.10.1.jar:/Users/akiraabe/.m2/repository/org/mockito/mockito-core/5.7.0/mockito-core-5.7.0.jar:/Users/akiraabe/.m2/repository/net/bytebuddy/byte-buddy-agent/1.14.10/byte-buddy-agent-1.14.10.jar:/Users/akiraabe/.m2/repository/org/objenesis/objenesis/3.3/objenesis-3.3.jar:/Users/akiraabe/.m2/repository/org/mockito/mockito-junit-jupiter/5.7.0/mockito-junit-jupiter-5.7.0.jar:/Users/akiraabe/.m2/repository/org/skyscreamer/jsonassert/1.5.1/jsonassert-1.5.1.jar:/Users/akiraabe/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar:/Users/akiraabe/.m2/repository/org/springframework/spring-core/6.1.1/spring-core-6.1.1.jar:/Users/akiraabe/.m2/repository/org/springframework/spring-jcl/6.1.1/spring-jcl-6.1.1.jar:/Users/akiraabe/.m2/repository/org/springframework/spring-test/6.1.1/spring-test-6.1.1.jar:/Users/akiraabe/.m2/repository/org/xmlunit/xmlunit-core/2.9.1/xmlunit-core-2.9.1.jar:"/>
+    <property name="java.vm.vendor" value="Eclipse Adoptium"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="https://adoptium.net/"/>
+    <property name="user.timezone" value="Asia/Tokyo"/>
+    <property name="os.name" value="Mac OS X"/>
+    <property name="java.vm.specification.version" value="21"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="JP"/>
+    <property name="sun.boot.library.path" value="/Users/akiraabe/.asdf/installs/java/adoptopenjdk-21.0.9+10.0.LTS/lib"/>
+    <property name="sun.java.command" value="/Users/akiraabe/practice/mybatis-learning/target/surefire/surefirebooter-20251221035749945_3.jar /Users/akiraabe/practice/mybatis-learning/target/surefire 2025-12-21T03-57-49_865-jvmRun1 surefire-20251221035749945_1tmp surefire_0-20251221035749945_2tmp"/>
+    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="/Users/akiraabe/practice/mybatis-learning/target/test-classes:/Users/akiraabe/practice/mybatis-learning/target/classes:/Users/akiraabe/.m2/repository/org/springframework/boot/spring-boot-starter-web/3.2.0/spring-boot-starter-web-3.2.0.jar:/Users/akiraabe/.m2/repository/org/springframework/boot/spring-boot-starter/3.2.0/spring-boot-starter-3.2.0.jar:/Users/akiraabe/.m2/repository/org/springframework/boot/spring-boot/3.2.0/spring-boot-3.2.0.jar:/Users/akiraabe/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/3.2.0/spring-boot-autoconfigure-3.2.0.jar:/Users/akiraabe/.m2/repository/org/springframework/boot/spring-boot-starter-logging/3.2.0/spring-boot-starter-logging-3.2.0.jar:/Users/akiraabe/.m2/repository/ch/qos/logback/logback-classic/1.4.11/logback-classic-1.4.11.jar:/Users/akiraabe/.m2/repository/ch/qos/logback/logback-core/1.4.11/logback-core-1.4.11.jar:/Users/akiraabe/.m2/repository/org/apache/logging/log4j/log4j-to-slf4j/2.21.1/log4j-to-slf4j-2.21.1.jar:/Users/akiraabe/.m2/repository/org/apache/logging/log4j/log4j-api/2.21.1/log4j-api-2.21.1.jar:/Users/akiraabe/.m2/repository/org/slf4j/jul-to-slf4j/2.0.9/jul-to-slf4j-2.0.9.jar:/Users/akiraabe/.m2/repository/jakarta/annotation/jakarta.annotation-api/2.1.1/jakarta.annotation-api-2.1.1.jar:/Users/akiraabe/.m2/repository/org/yaml/snakeyaml/2.2/snakeyaml-2.2.jar:/Users/akiraabe/.m2/repository/org/springframework/boot/spring-boot-starter-json/3.2.0/spring-boot-starter-json-3.2.0.jar:/Users/akiraabe/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.15.3/jackson-databind-2.15.3.jar:/Users/akiraabe/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.15.3/jackson-annotations-2.15.3.jar:/Users/akiraabe/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.15.3/jackson-core-2.15.3.jar:/Users/akiraabe/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jdk8/2.15.3/jackson-datatype-jdk8-2.15.3.jar:/Users/akiraabe/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.15.3/jackson-datatype-jsr310-2.15.3.jar:/Users/akiraabe/.m2/repository/com/fasterxml/jackson/module/jackson-module-parameter-names/2.15.3/jackson-module-parameter-names-2.15.3.jar:/Users/akiraabe/.m2/repository/org/springframework/boot/spring-boot-starter-tomcat/3.2.0/spring-boot-starter-tomcat-3.2.0.jar:/Users/akiraabe/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/10.1.16/tomcat-embed-core-10.1.16.jar:/Users/akiraabe/.m2/repository/org/apache/tomcat/embed/tomcat-embed-el/10.1.16/tomcat-embed-el-10.1.16.jar:/Users/akiraabe/.m2/repository/org/apache/tomcat/embed/tomcat-embed-websocket/10.1.16/tomcat-embed-websocket-10.1.16.jar:/Users/akiraabe/.m2/repository/org/springframework/spring-web/6.1.1/spring-web-6.1.1.jar:/Users/akiraabe/.m2/repository/org/springframework/spring-beans/6.1.1/spring-beans-6.1.1.jar:/Users/akiraabe/.m2/repository/io/micrometer/micrometer-observation/1.12.0/micrometer-observation-1.12.0.jar:/Users/akiraabe/.m2/repository/io/micrometer/micrometer-commons/1.12.0/micrometer-commons-1.12.0.jar:/Users/akiraabe/.m2/repository/org/springframework/spring-webmvc/6.1.1/spring-webmvc-6.1.1.jar:/Users/akiraabe/.m2/repository/org/springframework/spring-aop/6.1.1/spring-aop-6.1.1.jar:/Users/akiraabe/.m2/repository/org/springframework/spring-context/6.1.1/spring-context-6.1.1.jar:/Users/akiraabe/.m2/repository/org/springframework/spring-expression/6.1.1/spring-expression-6.1.1.jar:/Users/akiraabe/.m2/repository/org/mybatis/spring/boot/mybatis-spring-boot-starter/3.0.5/mybatis-spring-boot-starter-3.0.5.jar:/Users/akiraabe/.m2/repository/org/springframework/boot/spring-boot-starter-jdbc/3.2.0/spring-boot-starter-jdbc-3.2.0.jar:/Users/akiraabe/.m2/repository/com/zaxxer/HikariCP/5.0.1/HikariCP-5.0.1.jar:/Users/akiraabe/.m2/repository/org/springframework/spring-jdbc/6.1.1/spring-jdbc-6.1.1.jar:/Users/akiraabe/.m2/repository/org/springframework/spring-tx/6.1.1/spring-tx-6.1.1.jar:/Users/akiraabe/.m2/repository/org/mybatis/spring/boot/mybatis-spring-boot-autoconfigure/3.0.5/mybatis-spring-boot-autoconfigure-3.0.5.jar:/Users/akiraabe/.m2/repository/org/mybatis/mybatis/3.5.19/mybatis-3.5.19.jar:/Users/akiraabe/.m2/repository/org/mybatis/mybatis-spring/3.0.5/mybatis-spring-3.0.5.jar:/Users/akiraabe/.m2/repository/com/h2database/h2/2.2.224/h2-2.2.224.jar:/Users/akiraabe/.m2/repository/org/springframework/boot/spring-boot-starter-test/3.2.0/spring-boot-starter-test-3.2.0.jar:/Users/akiraabe/.m2/repository/org/springframework/boot/spring-boot-test/3.2.0/spring-boot-test-3.2.0.jar:/Users/akiraabe/.m2/repository/org/springframework/boot/spring-boot-test-autoconfigure/3.2.0/spring-boot-test-autoconfigure-3.2.0.jar:/Users/akiraabe/.m2/repository/com/jayway/jsonpath/json-path/2.8.0/json-path-2.8.0.jar:/Users/akiraabe/.m2/repository/org/slf4j/slf4j-api/2.0.9/slf4j-api-2.0.9.jar:/Users/akiraabe/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/4.0.1/jakarta.xml.bind-api-4.0.1.jar:/Users/akiraabe/.m2/repository/jakarta/activation/jakarta.activation-api/2.1.2/jakarta.activation-api-2.1.2.jar:/Users/akiraabe/.m2/repository/net/minidev/json-smart/2.5.0/json-smart-2.5.0.jar:/Users/akiraabe/.m2/repository/net/minidev/accessors-smart/2.5.0/accessors-smart-2.5.0.jar:/Users/akiraabe/.m2/repository/org/ow2/asm/asm/9.3/asm-9.3.jar:/Users/akiraabe/.m2/repository/org/assertj/assertj-core/3.24.2/assertj-core-3.24.2.jar:/Users/akiraabe/.m2/repository/net/bytebuddy/byte-buddy/1.14.10/byte-buddy-1.14.10.jar:/Users/akiraabe/.m2/repository/org/awaitility/awaitility/4.2.0/awaitility-4.2.0.jar:/Users/akiraabe/.m2/repository/org/hamcrest/hamcrest/2.2/hamcrest-2.2.jar:/Users/akiraabe/.m2/repository/org/junit/jupiter/junit-jupiter/5.10.1/junit-jupiter-5.10.1.jar:/Users/akiraabe/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.10.1/junit-jupiter-api-5.10.1.jar:/Users/akiraabe/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/Users/akiraabe/.m2/repository/org/junit/platform/junit-platform-commons/1.10.1/junit-platform-commons-1.10.1.jar:/Users/akiraabe/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/akiraabe/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.10.1/junit-jupiter-params-5.10.1.jar:/Users/akiraabe/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.10.1/junit-jupiter-engine-5.10.1.jar:/Users/akiraabe/.m2/repository/org/junit/platform/junit-platform-engine/1.10.1/junit-platform-engine-1.10.1.jar:/Users/akiraabe/.m2/repository/org/mockito/mockito-core/5.7.0/mockito-core-5.7.0.jar:/Users/akiraabe/.m2/repository/net/bytebuddy/byte-buddy-agent/1.14.10/byte-buddy-agent-1.14.10.jar:/Users/akiraabe/.m2/repository/org/objenesis/objenesis/3.3/objenesis-3.3.jar:/Users/akiraabe/.m2/repository/org/mockito/mockito-junit-jupiter/5.7.0/mockito-junit-jupiter-5.7.0.jar:/Users/akiraabe/.m2/repository/org/skyscreamer/jsonassert/1.5.1/jsonassert-1.5.1.jar:/Users/akiraabe/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar:/Users/akiraabe/.m2/repository/org/springframework/spring-core/6.1.1/spring-core-6.1.1.jar:/Users/akiraabe/.m2/repository/org/springframework/spring-jcl/6.1.1/spring-jcl-6.1.1.jar:/Users/akiraabe/.m2/repository/org/springframework/spring-test/6.1.1/spring-test-6.1.1.jar:/Users/akiraabe/.m2/repository/org/xmlunit/xmlunit-core/2.9.1/xmlunit-core-2.9.1.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/Users/akiraabe"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2025-10-21"/>
+    <property name="java.home" value="/Users/akiraabe/.asdf/installs/java/adoptopenjdk-21.0.9+10.0.LTS"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/Users/akiraabe/practice/mybatis-learning"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="FILE_LOG_CHARSET" value="UTF-8"/>
+    <property name="java.awt.headless" value="true"/>
+    <property name="apple.awt.application.name" value="ForkedBooter"/>
+    <property name="surefire.real.class.path" value="/Users/akiraabe/practice/mybatis-learning/target/surefire/surefirebooter-20251221035749945_3.jar"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="java.runtime.version" value="21.0.9+10-LTS"/>
+    <property name="user.name" value="akiraabe"/>
+    <property name="stdout.encoding" value="UTF-8"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="15.6.1"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="java.vendor.version" value="Temurin-21.0.9+10"/>
+    <property name="localRepository" value="/Users/akiraabe/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://github.com/adoptium/adoptium-support/issues"/>
+    <property name="java.io.tmpdir" value="/var/folders/l5/4kstpv9946z__3830l3js51c0000gn/T/"/>
+    <property name="com.zaxxer.hikari.pool_number" value="1"/>
+    <property name="java.version" value="21.0.9"/>
+    <property name="user.dir" value="/Users/akiraabe/practice/mybatis-learning"/>
+    <property name="os.arch" value="aarch64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="PID" value="7464"/>
+    <property name="CONSOLE_LOG_CHARSET" value="UTF-8"/>
+    <property name="native.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/Users/akiraabe/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="stderr.encoding" value="UTF-8"/>
+    <property name="java.vendor" value="Eclipse Adoptium"/>
+    <property name="java.vm.version" value="21.0.9+10-LTS"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="java.class.version" value="65.0"/>
+  </properties>
+  <testcase name="testProjectWithOrganization" classname="com.example.mybatislearning.MyBatisApplicationTests" time="0.005">
+    <system-out><![CDATA[2025-12-21T03:57:52.777+09:00  INFO 7464 --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.example.mybatislearning.MyBatisApplicationTests]: MyBatisApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-12-21T03:57:52.777+09:00  INFO 7464 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.example.mybatislearning.MyBatisLearningApplication for test class com.example.mybatislearning.MyBatisApplicationTests
+
+=== Project with Organization Test ===
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@651caa2e]
+JDBC Connection [HikariProxyConnection@1887701594 wrapping conn0: url=jdbc:h2:mem:testdb user=SA] will be managed by Spring
+==>  Preparing: SELECT p.id, p.project_name, p.organization_id, o.id AS org_id, o.name AS org_name, o.description AS org_description FROM projects p INNER JOIN organizations o ON p.organization_id = o.id WHERE p.id = ?
+==> Parameters: 1(Long)
+<==    Columns: ID, PROJECT_NAME, ORGANIZATION_ID, ORG_ID, ORG_NAME, ORG_DESCRIPTION
+<==        Row: 1, Web Application Redesign, 1, 1, Tech Corp, Technology company focused on software development
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@651caa2e]
+Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@651caa2e]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@651caa2e]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@651caa2e]
+Project with Organization: Project{id=1, projectName='Web Application Redesign', organizationId=1, organization=Tech Corp}
+Organization Details: Organization{id=1, name='Tech Corp', description='Technology company focused on software development'}
+=== Project with Organization Test Completed ===
+
+]]></system-out>
+  </testcase>
+  <testcase name="testOrganizationAnnotationMapper" classname="com.example.mybatislearning.MyBatisApplicationTests" time="0.006">
+    <system-out><![CDATA[
+=== Organization Annotation Mapper Test ===
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3e998033] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@236590348 wrapping conn0: url=jdbc:h2:mem:testdb user=SA] will not be managed by Spring
+==>  Preparing: INSERT INTO organizations (name, description) VALUES (?, ?)
+==> Parameters: Annotation Org(String), Created via annotation(String)
+<==    Updates: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3e998033]
+Created (Annotation): Organization{id=15, name='Annotation Org', description='Created via annotation'}
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@527d5e48] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1081819622 wrapping conn0: url=jdbc:h2:mem:testdb user=SA] will not be managed by Spring
+==>  Preparing: SELECT * FROM organizations WHERE id = ?
+==> Parameters: 15(Long)
+<==    Columns: ID, NAME, DESCRIPTION
+<==        Row: 15, Annotation Org, Created via annotation
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@527d5e48]
+Retrieved (Annotation): Organization{id=15, name='Annotation Org', description='Created via annotation'}
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3291d9c2] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1828522217 wrapping conn0: url=jdbc:h2:mem:testdb user=SA] will not be managed by Spring
+==>  Preparing: SELECT * FROM organizations
+==> Parameters: 
+<==    Columns: ID, NAME, DESCRIPTION
+<==        Row: 1, Tech Corp, Technology company focused on software development
+<==        Row: 2, Business Solutions Inc, Enterprise business consulting services
+<==        Row: 4, Test Organization, Test Description
+<==        Row: 5, Updated Organization, Updated Description
+<==        Row: 6, Select Test Org, Description for select
+<==        Row: 8, Annotation Test Org, Created via annotation mapper
+<==        Row: 9, Updated via Annotation, Updated Description
+<==        Row: 10, Annotation Select Test, Description
+<==        Row: 15, Annotation Org, Created via annotation
+<==      Total: 9
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3291d9c2]
+All Organizations (Annotation): 9 records
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@54ca9420] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1319406382 wrapping conn0: url=jdbc:h2:mem:testdb user=SA] will not be managed by Spring
+==>  Preparing: UPDATE organizations SET name = ?, description = ? WHERE id = ?
+==> Parameters: Updated Annotation Org(String), Created via annotation(String), 15(Long)
+<==    Updates: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@54ca9420]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@72c704f1] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1996087296 wrapping conn0: url=jdbc:h2:mem:testdb user=SA] will not be managed by Spring
+==>  Preparing: SELECT * FROM organizations WHERE id = ?
+==> Parameters: 15(Long)
+<==    Columns: ID, NAME, DESCRIPTION
+<==        Row: 15, Updated Annotation Org, Created via annotation
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@72c704f1]
+Updated (Annotation): Organization{id=15, name='Updated Annotation Org', description='Created via annotation'}
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7612116b] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@470092156 wrapping conn0: url=jdbc:h2:mem:testdb user=SA] will not be managed by Spring
+==>  Preparing: DELETE FROM organizations WHERE id = ?
+==> Parameters: 15(Long)
+<==    Updates: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7612116b]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@562f6681] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1869571492 wrapping conn0: url=jdbc:h2:mem:testdb user=SA] will not be managed by Spring
+==>  Preparing: SELECT * FROM organizations WHERE id = ?
+==> Parameters: 15(Long)
+<==      Total: 0
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@562f6681]
+Deleted organization (Annotation) with ID: 15
+=== Organization Annotation Mapper Test Completed ===
+
+]]></system-out>
+  </testcase>
+  <testcase name="testProjectCrud" classname="com.example.mybatislearning.MyBatisApplicationTests" time="0.006">
+    <system-out><![CDATA[
+=== Project CRUD Test ===
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@990b86b]
+JDBC Connection [HikariProxyConnection@274492574 wrapping conn0: url=jdbc:h2:mem:testdb user=SA] will be managed by Spring
+==>  Preparing: INSERT INTO projects (project_name, organization_id) VALUES (?, ?)
+==> Parameters: Test Project(String), 1(Long)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@990b86b]
+Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@990b86b]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@990b86b]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@990b86b]
+Created: Project{id=12, projectName='Test Project', organizationId=1, organization=null}
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@40a7974]
+JDBC Connection [HikariProxyConnection@1705294294 wrapping conn0: url=jdbc:h2:mem:testdb user=SA] will be managed by Spring
+==>  Preparing: SELECT id, project_name, organization_id FROM projects WHERE id = ?
+==> Parameters: 12(Long)
+<==    Columns: ID, PROJECT_NAME, ORGANIZATION_ID
+<==        Row: 12, Test Project, 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@40a7974]
+Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@40a7974]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@40a7974]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@40a7974]
+Retrieved: Project{id=12, projectName='Test Project', organizationId=1, organization=null}
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@16ef1160]
+JDBC Connection [HikariProxyConnection@1733902203 wrapping conn0: url=jdbc:h2:mem:testdb user=SA] will be managed by Spring
+==>  Preparing: UPDATE projects SET project_name = ?, organization_id = ? WHERE id = ?
+==> Parameters: Updated Project(String), 2(Long), 12(Long)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@16ef1160]
+Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@16ef1160]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@16ef1160]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@16ef1160]
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2773504f]
+JDBC Connection [HikariProxyConnection@1087439460 wrapping conn0: url=jdbc:h2:mem:testdb user=SA] will be managed by Spring
+==>  Preparing: SELECT id, project_name, organization_id FROM projects WHERE id = ?
+==> Parameters: 12(Long)
+<==    Columns: ID, PROJECT_NAME, ORGANIZATION_ID
+<==        Row: 12, Updated Project, 2
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2773504f]
+Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2773504f]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2773504f]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2773504f]
+Updated: Project{id=12, projectName='Updated Project', organizationId=2, organization=null}
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6edd4fe2]
+JDBC Connection [HikariProxyConnection@1399215965 wrapping conn0: url=jdbc:h2:mem:testdb user=SA] will be managed by Spring
+==>  Preparing: DELETE FROM projects WHERE id = ?
+==> Parameters: 12(Long)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6edd4fe2]
+Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6edd4fe2]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6edd4fe2]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6edd4fe2]
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1b6cad77]
+JDBC Connection [HikariProxyConnection@1088348283 wrapping conn0: url=jdbc:h2:mem:testdb user=SA] will be managed by Spring
+==>  Preparing: SELECT id, project_name, organization_id FROM projects WHERE id = ?
+==> Parameters: 12(Long)
+<==      Total: 0
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1b6cad77]
+Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1b6cad77]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1b6cad77]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1b6cad77]
+Deleted project with ID: 12
+=== Project CRUD Test Completed ===
+
+]]></system-out>
+  </testcase>
+  <testcase name="testProjectsByOrganization" classname="com.example.mybatislearning.MyBatisApplicationTests" time="0.002">
+    <system-out><![CDATA[
+=== Projects by Organization Test ===
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@21e39b82]
+JDBC Connection [HikariProxyConnection@310426339 wrapping conn0: url=jdbc:h2:mem:testdb user=SA] will be managed by Spring
+==>  Preparing: SELECT id, project_name, organization_id FROM projects WHERE organization_id = ?
+==> Parameters: 1(Long)
+<==    Columns: ID, PROJECT_NAME, ORGANIZATION_ID
+<==        Row: 1, Web Application Redesign, 1
+<==        Row: 2, Mobile App Development, 1
+<==        Row: 5, New Test Project, 1
+<==        Row: 7, Select Test Project, 1
+<==      Total: 4
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@21e39b82]
+Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@21e39b82]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@21e39b82]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@21e39b82]
+Projects for Organization 1:
+  - Project{id=1, projectName='Web Application Redesign', organizationId=1, organization=null}
+  - Project{id=2, projectName='Mobile App Development', organizationId=1, organization=null}
+  - Project{id=5, projectName='New Test Project', organizationId=1, organization=null}
+  - Project{id=7, projectName='Select Test Project', organizationId=1, organization=null}
+=== Projects by Organization Test Completed ===
+
+]]></system-out>
+  </testcase>
+  <testcase name="testDatabaseAndSqlLogging" classname="com.example.mybatislearning.MyBatisApplicationTests" time="0.003">
+    <system-out><![CDATA[
+=== Database and SQL Logging Test ===
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@256a5df0]
+JDBC Connection [HikariProxyConnection@320305128 wrapping conn0: url=jdbc:h2:mem:testdb user=SA] will be managed by Spring
+==>  Preparing: SELECT id, name, description FROM organizations
+==> Parameters: 
+<==    Columns: ID, NAME, DESCRIPTION
+<==        Row: 1, Tech Corp, Technology company focused on software development
+<==        Row: 2, Business Solutions Inc, Enterprise business consulting services
+<==        Row: 4, Test Organization, Test Description
+<==        Row: 5, Updated Organization, Updated Description
+<==        Row: 6, Select Test Org, Description for select
+<==        Row: 8, Annotation Test Org, Created via annotation mapper
+<==        Row: 9, Updated via Annotation, Updated Description
+<==        Row: 10, Annotation Select Test, Description
+<==      Total: 8
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@256a5df0]
+Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@256a5df0]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@256a5df0]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@256a5df0]
+Initial Organizations:
+  - Organization{id=1, name='Tech Corp', description='Technology company focused on software development'}
+  - Organization{id=2, name='Business Solutions Inc', description='Enterprise business consulting services'}
+  - Organization{id=4, name='Test Organization', description='Test Description'}
+  - Organization{id=5, name='Updated Organization', description='Updated Description'}
+  - Organization{id=6, name='Select Test Org', description='Description for select'}
+  - Organization{id=8, name='Annotation Test Org', description='Created via annotation mapper'}
+  - Organization{id=9, name='Updated via Annotation', description='Updated Description'}
+  - Organization{id=10, name='Annotation Select Test', description='Description'}
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@45790cb]
+JDBC Connection [HikariProxyConnection@754485505 wrapping conn0: url=jdbc:h2:mem:testdb user=SA] will be managed by Spring
+==>  Preparing: SELECT id, project_name, organization_id FROM projects
+==> Parameters: 
+<==    Columns: ID, PROJECT_NAME, ORGANIZATION_ID
+<==        Row: 1, Web Application Redesign, 1
+<==        Row: 2, Mobile App Development, 1
+<==        Row: 3, ERP System Integration, 2
+<==        Row: 5, New Test Project, 1
+<==        Row: 6, Updated Project Name, 2
+<==        Row: 7, Select Test Project, 1
+<==      Total: 6
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@45790cb]
+Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@45790cb]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@45790cb]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@45790cb]
+Initial Projects:
+  - Project{id=1, projectName='Web Application Redesign', organizationId=1, organization=null}
+  - Project{id=2, projectName='Mobile App Development', organizationId=1, organization=null}
+  - Project{id=3, projectName='ERP System Integration', organizationId=2, organization=null}
+  - Project{id=5, projectName='New Test Project', organizationId=1, organization=null}
+  - Project{id=6, projectName='Updated Project Name', organizationId=2, organization=null}
+  - Project{id=7, projectName='Select Test Project', organizationId=1, organization=null}
+SQL logs are automatically output via MyBatis configuration
+=== Database and SQL Logging Test Completed ===
+
+]]></system-out>
+  </testcase>
+  <testcase name="testOrganizationCrud" classname="com.example.mybatislearning.MyBatisApplicationTests" time="0.004">
+    <system-out><![CDATA[
+=== Organization CRUD Test ===
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4780341]
+JDBC Connection [HikariProxyConnection@1630192523 wrapping conn0: url=jdbc:h2:mem:testdb user=SA] will be managed by Spring
+==>  Preparing: INSERT INTO organizations (name, description) VALUES (?, ?)
+==> Parameters: Test Organization(String), Test Description(String)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4780341]
+Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4780341]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4780341]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4780341]
+Created: Organization{id=16, name='Test Organization', description='Test Description'}
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@9f2fe2e]
+JDBC Connection [HikariProxyConnection@2032613967 wrapping conn0: url=jdbc:h2:mem:testdb user=SA] will be managed by Spring
+==>  Preparing: SELECT id, name, description FROM organizations WHERE id = ?
+==> Parameters: 16(Long)
+<==    Columns: ID, NAME, DESCRIPTION
+<==        Row: 16, Test Organization, Test Description
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@9f2fe2e]
+Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@9f2fe2e]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@9f2fe2e]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@9f2fe2e]
+Retrieved: Organization{id=16, name='Test Organization', description='Test Description'}
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4e26987b]
+JDBC Connection [HikariProxyConnection@959718932 wrapping conn0: url=jdbc:h2:mem:testdb user=SA] will be managed by Spring
+==>  Preparing: UPDATE organizations SET name = ?, description = ? WHERE id = ?
+==> Parameters: Updated Organization(String), Updated Description(String), 16(Long)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4e26987b]
+Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4e26987b]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4e26987b]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4e26987b]
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7981963f]
+JDBC Connection [HikariProxyConnection@189629356 wrapping conn0: url=jdbc:h2:mem:testdb user=SA] will be managed by Spring
+==>  Preparing: SELECT id, name, description FROM organizations WHERE id = ?
+==> Parameters: 16(Long)
+<==    Columns: ID, NAME, DESCRIPTION
+<==        Row: 16, Updated Organization, Updated Description
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7981963f]
+Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7981963f]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7981963f]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7981963f]
+Updated: Organization{id=16, name='Updated Organization', description='Updated Description'}
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@13d10057]
+JDBC Connection [HikariProxyConnection@345584390 wrapping conn0: url=jdbc:h2:mem:testdb user=SA] will be managed by Spring
+==>  Preparing: DELETE FROM organizations WHERE id = ?
+==> Parameters: 16(Long)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@13d10057]
+Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@13d10057]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@13d10057]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@13d10057]
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@73ae82da]
+JDBC Connection [HikariProxyConnection@752202140 wrapping conn0: url=jdbc:h2:mem:testdb user=SA] will be managed by Spring
+==>  Preparing: SELECT id, name, description FROM organizations WHERE id = ?
+==> Parameters: 16(Long)
+<==      Total: 0
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@73ae82da]
+Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@73ae82da]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@73ae82da]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@73ae82da]
+Deleted organization with ID: 16
+=== Organization CRUD Test Completed ===
+
+]]></system-out>
+  </testcase>
+</testsuite>

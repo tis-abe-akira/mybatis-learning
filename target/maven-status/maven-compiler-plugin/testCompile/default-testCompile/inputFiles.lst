@@ -1,5 +1,12 @@
 /Users/akiraabe/practice/mybatis-learning/src/test/java/com/example/mybatislearning/ApplicationConfigurationTest.java
+/Users/akiraabe/practice/mybatis-learning/src/test/java/com/example/mybatislearning/MyBatisApplicationTests.java
 /Users/akiraabe/practice/mybatis-learning/src/test/java/com/example/mybatislearning/PackageStructureTest.java
+/Users/akiraabe/practice/mybatis-learning/src/test/java/com/example/mybatislearning/mapper/OrganizationMapperTest.java
 /Users/akiraabe/practice/mybatis-learning/src/test/java/com/example/mybatislearning/entity/ProjectTest.java
 /Users/akiraabe/practice/mybatis-learning/src/test/java/com/example/mybatislearning/DatabaseSchemaTest.java
+/Users/akiraabe/practice/mybatis-learning/src/test/java/com/example/mybatislearning/service/OrganizationServiceTest.java
+/Users/akiraabe/practice/mybatis-learning/src/test/java/com/example/mybatislearning/mapper/OrganizationAnnotationMapperTest.java
 /Users/akiraabe/practice/mybatis-learning/src/test/java/com/example/mybatislearning/entity/OrganizationTest.java
+/Users/akiraabe/practice/mybatis-learning/src/test/java/com/example/mybatislearning/mapper/ProjectMapperTest.java
+/Users/akiraabe/practice/mybatis-learning/src/test/java/com/example/mybatislearning/package-info.java
+/Users/akiraabe/practice/mybatis-learning/src/test/java/com/example/mybatislearning/service/ProjectServiceTest.java

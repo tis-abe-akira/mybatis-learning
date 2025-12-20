@@ -55,7 +55,7 @@
   - _Requirements: 2.3, 2.4, 2.5, 2.6, 7.1_
 
 - [ ] 3. XMLマッパーによるCRUD操作の実装
-- [ ] 3.1 OrganizationMapper（XML）の実装
+- [x] 3.1 OrganizationMapper（XML）の実装
   - OrganizationMapperインターフェースを作成し、@Mapperアノテーションを付与
   - insert、selectById、selectAll、update、deleteByIdメソッドを定義
   - OrganizationMapper.xmlを作成し、namespaceを設定
@@ -65,7 +65,7 @@
   - UPDATE文とDELETE文を実装
   - _Requirements: 4.1, 4.2, 4.3, 4.4, 4.5, 4.6, 4.7, 4.8_
 
-- [ ] 3.2 ProjectMapper（XML）の実装
+- [x] 3.2 ProjectMapper（XML）の実装
   - ProjectMapperインターフェースを作成し、@Mapperアノテーションを付与
   - insert、selectById、selectAll、selectByOrganizationId、selectProjectWithOrganization、update、deleteByIdメソッドを定義
   - ProjectMapper.xmlを作成し、namespaceを設定
@@ -77,7 +77,7 @@
   - _Requirements: 5.1, 5.2, 5.3, 5.4, 5.5, 5.6, 5.7, 5.8, 7.2, 7.3, 7.4_
 
 - [ ] 4. アノテーションマッパーによるCRUD操作の実装
-- [ ] 4.1 (P) OrganizationAnnotationMapperの実装
+- [x] 4.1 (P) OrganizationAnnotationMapperの実装
   - OrganizationAnnotationMapperインターフェースを作成し、@Mapperアノテーションを付与
   - @Insertアノテーションでinsertメソッドを定義（@Optionsで自動生成キー取得）
   - @SelectアノテーションでselectById、selectAllメソッドを定義
@@ -87,7 +87,7 @@
   - _Requirements: 6.1, 6.2, 6.3, 6.4, 6.5, 6.6_
 
 - [ ] 5. サービス層の実装
-- [ ] 5.1 OrganizationServiceの実装
+- [x] 5.1 OrganizationServiceの実装
   - OrganizationServiceクラスを作成し、@Serviceアノテーションを付与
   - OrganizationMapperをコンストラクタインジェクションで受け取る
   - createOrganizationメソッド（@Transactional）を実装
@@ -97,7 +97,7 @@
   - deleteOrganizationメソッド（@Transactional）を実装
   - _Requirements: 8.2, 8.3, 8.4, 9.1, 9.3, 9.4, 9.5, 9.6_
 
-- [ ] 5.2 (P) ProjectServiceの実装
+- [x] 5.2 (P) ProjectServiceの実装
   - ProjectServiceクラスを作成し、@Serviceアノテーションを付与
   - ProjectMapperをコンストラクタインジェクションで受け取る
   - createProjectメソッド（@Transactional）を実装
@@ -109,8 +109,8 @@
   - deleteProjectメソッド（@Transactional）を実装
   - _Requirements: 8.2, 8.3, 8.4, 8.5, 9.2, 9.3, 9.4, 9.5, 9.6_
 
-- [ ] 6. 統合テストとデータ出力機能の実装
-- [ ] 6.1 MyBatisApplicationTestsの実装
+- [x] 6. 統合テストとデータ出力機能の実装
+- [x] 6.1 MyBatisApplicationTestsの実装
   - MyBatisApplicationTestsクラスを作成し、@SpringBootTestアノテーションを付与
   - OrganizationServiceとProjectServiceをフィールドインジェクション
   - testOrganizationCrudメソッド（@Test）でOrganizationのCRUD操作をテスト（Create、Read、Update、Delete）
@@ -122,7 +122,7 @@
   - SQLログ出力の確認（application.ymlの設定により自動出力）
   - _Requirements: 10.1, 10.2, 10.3, 10.5, 10.6, 10.7_
 
-- [ ] 6.2 (P) アノテーションマッパーのテスト追加
+- [x] 6.2 (P) アノテーションマッパーのテスト追加
   - testOrganizationAnnotationMapperメソッド（@Test）を追加
   - OrganizationAnnotationMapperをフィールドインジェクション
   - アノテーションマッパーのCRUD操作をテスト

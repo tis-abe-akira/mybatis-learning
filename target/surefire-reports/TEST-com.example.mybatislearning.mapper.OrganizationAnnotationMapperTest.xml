@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.example.mybatislearning.PackageStructureTest" time="0.003" tests="5" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.example.mybatislearning.mapper.OrganizationAnnotationMapperTest" time="0.041" tests="5" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -7,6 +7,7 @@
     <property name="java.vm.vendor" value="Eclipse Adoptium"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.vendor.url" value="https://adoptium.net/"/>
+    <property name="user.timezone" value="Asia/Tokyo"/>
     <property name="os.name" value="Mac OS X"/>
     <property name="java.vm.specification.version" value="21"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
@@ -28,6 +29,8 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="FILE_LOG_CHARSET" value="UTF-8"/>
+    <property name="java.awt.headless" value="true"/>
     <property name="apple.awt.application.name" value="ForkedBooter"/>
     <property name="surefire.real.class.path" value="/Users/akiraabe/practice/mybatis-learning/target/surefire/surefirebooter-20251221035749945_3.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
@@ -44,10 +47,13 @@
     <property name="localRepository" value="/Users/akiraabe/.m2/repository"/>
     <property name="java.vendor.url.bug" value="https://github.com/adoptium/adoptium-support/issues"/>
     <property name="java.io.tmpdir" value="/var/folders/l5/4kstpv9946z__3830l3js51c0000gn/T/"/>
+    <property name="com.zaxxer.hikari.pool_number" value="1"/>
     <property name="java.version" value="21.0.9"/>
     <property name="user.dir" value="/Users/akiraabe/practice/mybatis-learning"/>
     <property name="os.arch" value="aarch64"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="PID" value="7464"/>
+    <property name="CONSOLE_LOG_CHARSET" value="UTF-8"/>
     <property name="native.encoding" value="UTF-8"/>
     <property name="java.library.path" value="/Users/akiraabe/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
     <property name="java.vm.info" value="mixed mode, sharing"/>
@@ -58,9 +64,106 @@
     <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.class.version" value="65.0"/>
   </properties>
-  <testcase name="mapperPackageExists" classname="com.example.mybatislearning.PackageStructureTest" time="0.001"/>
-  <testcase name="entityPackageExists" classname="com.example.mybatislearning.PackageStructureTest" time="0.001"/>
-  <testcase name="testPackageExists" classname="com.example.mybatislearning.PackageStructureTest" time="0.0"/>
-  <testcase name="servicePackageExists" classname="com.example.mybatislearning.PackageStructureTest" time="0.001"/>
-  <testcase name="mappersDirectoryExists" classname="com.example.mybatislearning.PackageStructureTest" time="0.0"/>
+  <testcase name="testSelectAll" classname="com.example.mybatislearning.mapper.OrganizationAnnotationMapperTest" time="0.003">
+    <system-out><![CDATA[2025-12-21T03:57:52.572+09:00  INFO 7464 --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.example.mybatislearning.mapper.OrganizationAnnotationMapperTest]: OrganizationAnnotationMapperTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-12-21T03:57:52.582+09:00  INFO 7464 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.example.mybatislearning.MyBatisLearningApplication for test class com.example.mybatislearning.mapper.OrganizationAnnotationMapperTest
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@77d54a41] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1090678364 wrapping conn0: url=jdbc:h2:mem:testdb user=SA] will not be managed by Spring
+==>  Preparing: SELECT * FROM organizations
+==> Parameters: 
+<==    Columns: ID, NAME, DESCRIPTION
+<==        Row: 1, Tech Corp, Technology company focused on software development
+<==        Row: 2, Business Solutions Inc, Enterprise business consulting services
+<==        Row: 4, Test Organization, Test Description
+<==        Row: 5, Updated Organization, Updated Description
+<==        Row: 6, Select Test Org, Description for select
+<==      Total: 5
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@77d54a41]
+All Organizations (Annotation): [Organization{id=1, name='Tech Corp', description='Technology company focused on software development'}, Organization{id=2, name='Business Solutions Inc', description='Enterprise business consulting services'}, Organization{id=4, name='Test Organization', description='Test Description'}, Organization{id=5, name='Updated Organization', description='Updated Description'}, Organization{id=6, name='Select Test Org', description='Description for select'}]
+]]></system-out>
+  </testcase>
+  <testcase name="testDeleteById" classname="com.example.mybatislearning.mapper.OrganizationAnnotationMapperTest" time="0.003">
+    <system-out><![CDATA[Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@23c72128] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@735200015 wrapping conn0: url=jdbc:h2:mem:testdb user=SA] will not be managed by Spring
+==>  Preparing: INSERT INTO organizations (name, description) VALUES (?, ?)
+==> Parameters: Annotation Delete Test(String), To be deleted(String)
+<==    Updates: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@23c72128]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2890e479] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1857031358 wrapping conn0: url=jdbc:h2:mem:testdb user=SA] will not be managed by Spring
+==>  Preparing: DELETE FROM organizations WHERE id = ?
+==> Parameters: 7(Long)
+<==    Updates: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2890e479]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@74e4be21] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1293369737 wrapping conn0: url=jdbc:h2:mem:testdb user=SA] will not be managed by Spring
+==>  Preparing: SELECT * FROM organizations WHERE id = ?
+==> Parameters: 7(Long)
+<==      Total: 0
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@74e4be21]
+Deleted organization (Annotation) with ID: 7
+]]></system-out>
+  </testcase>
+  <testcase name="testInsert" classname="com.example.mybatislearning.mapper.OrganizationAnnotationMapperTest" time="0.002">
+    <system-out><![CDATA[Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@628bd77e] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@204534381 wrapping conn0: url=jdbc:h2:mem:testdb user=SA] will not be managed by Spring
+==>  Preparing: INSERT INTO organizations (name, description) VALUES (?, ?)
+==> Parameters: Annotation Test Org(String), Created via annotation mapper(String)
+<==    Updates: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@628bd77e]
+Inserted (Annotation): Organization{id=8, name='Annotation Test Org', description='Created via annotation mapper'}
+]]></system-out>
+  </testcase>
+  <testcase name="testUpdate" classname="com.example.mybatislearning.mapper.OrganizationAnnotationMapperTest" time="0.005">
+    <system-out><![CDATA[Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5d74507c] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@714623314 wrapping conn0: url=jdbc:h2:mem:testdb user=SA] will not be managed by Spring
+==>  Preparing: INSERT INTO organizations (name, description) VALUES (?, ?)
+==> Parameters: Annotation Update Test(String), Original(String)
+<==    Updates: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5d74507c]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@16944b58] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@498884733 wrapping conn0: url=jdbc:h2:mem:testdb user=SA] will not be managed by Spring
+==>  Preparing: UPDATE organizations SET name = ?, description = ? WHERE id = ?
+==> Parameters: Updated via Annotation(String), Updated Description(String), 9(Long)
+<==    Updates: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@16944b58]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@62b42406] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@168702939 wrapping conn0: url=jdbc:h2:mem:testdb user=SA] will not be managed by Spring
+==>  Preparing: SELECT * FROM organizations WHERE id = ?
+==> Parameters: 9(Long)
+<==    Columns: ID, NAME, DESCRIPTION
+<==        Row: 9, Updated via Annotation, Updated Description
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@62b42406]
+Updated (Annotation): Organization{id=9, name='Updated via Annotation', description='Updated Description'}
+]]></system-out>
+  </testcase>
+  <testcase name="testSelectById" classname="com.example.mybatislearning.mapper.OrganizationAnnotationMapperTest" time="0.006">
+    <system-out><![CDATA[Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3ef46749] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1085622114 wrapping conn0: url=jdbc:h2:mem:testdb user=SA] will not be managed by Spring
+==>  Preparing: INSERT INTO organizations (name, description) VALUES (?, ?)
+==> Parameters: Annotation Select Test(String), Description(String)
+<==    Updates: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3ef46749]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@362cf66] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@2013901882 wrapping conn0: url=jdbc:h2:mem:testdb user=SA] will not be managed by Spring
+==>  Preparing: SELECT * FROM organizations WHERE id = ?
+==> Parameters: 10(Long)
+<==    Columns: ID, NAME, DESCRIPTION
+<==        Row: 10, Annotation Select Test, Description
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@362cf66]
+Retrieved (Annotation): Organization{id=10, name='Annotation Select Test', description='Description'}
+]]></system-out>
+  </testcase>
 </testsuite>

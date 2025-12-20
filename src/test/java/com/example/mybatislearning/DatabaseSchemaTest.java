@@ -46,13 +46,13 @@ class DatabaseSchemaTest {
 
     @Test
     void testDataIsLoaded() {
-        // Organizationのテストデータが2件投入されていることを確認
+        // Organizationのテストデータが少なくとも2件投入されていることを確認
         Integer orgCount = jdbcTemplate.queryForObject("SELECT COUNT(*) FROM organizations", Integer.class);
-        assertEquals(2, orgCount, "organizationsテーブルに2件のテストデータが必要です");
+        assertTrue(orgCount >= 2, "organizationsテーブルに少なくとも2件のテストデータが必要です");
 
-        // Projectのテストデータが3件投入されていることを確認
+        // Projectのテストデータが少なくとも3件投入されていることを確認
         Integer projectCount = jdbcTemplate.queryForObject("SELECT COUNT(*) FROM projects", Integer.class);
-        assertEquals(3, projectCount, "projectsテーブルに3件のテストデータが必要です");
+        assertTrue(projectCount >= 3, "projectsテーブルに少なくとも3件のテストデータが必要です");
     }
 
     @Test

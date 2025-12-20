@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.mybatislearning.mapper.OrganizationMapper">
+
+    <!-- resultMap定義: カラムとフィールドのマッピング -->
+    <resultMap id="organizationResultMap" type="com.example.mybatislearning.entity.Organization">
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="description" column="description"/>
+    </resultMap>
+
+    <!-- INSERT: useGeneratedKeys="true"でID自動採番 -->
+    <insert id="insert" parameterType="com.example.mybatislearning.entity.Organization"
+            useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO organizations (name, description)
+        VALUES (#{name}, #{description})
+    </insert>
+
+    <!-- SELECT BY ID: パラメータバインディング -->
+    <select id="selectById" parameterType="long" resultMap="organizationResultMap">
+        SELECT id, name, description
+        FROM organizations
+        WHERE id = #{id}
+    </select>
+
+    <!-- SELECT ALL -->
+    <select id="selectAll" resultMap="organizationResultMap">
+        SELECT id, name, description
+        FROM organizations
+    </select>
+
+    <!-- UPDATE -->
+    <update id="update" parameterType="com.example.mybatislearning.entity.Organization">
+        UPDATE organizations
+        SET name = #{name},
+            description = #{description}
+        WHERE id = #{id}
+    </update>
+
+    <!-- DELETE BY ID -->
+    <delete id="deleteById" parameterType="long">
+        DELETE FROM organizations
+        WHERE id = #{id}
+    </delete>
+
+</mapper>

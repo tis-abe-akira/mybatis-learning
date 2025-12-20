@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.example.mybatislearning.PackageStructureTest" time="0.003" tests="5" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.example.mybatislearning.service.ProjectServiceTest" time="0.038" tests="7" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -7,6 +7,7 @@
     <property name="java.vm.vendor" value="Eclipse Adoptium"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.vendor.url" value="https://adoptium.net/"/>
+    <property name="user.timezone" value="Asia/Tokyo"/>
     <property name="os.name" value="Mac OS X"/>
     <property name="java.vm.specification.version" value="21"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
@@ -28,6 +29,8 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="FILE_LOG_CHARSET" value="UTF-8"/>
+    <property name="java.awt.headless" value="true"/>
     <property name="apple.awt.application.name" value="ForkedBooter"/>
     <property name="surefire.real.class.path" value="/Users/akiraabe/practice/mybatis-learning/target/surefire/surefirebooter-20251221035749945_3.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
@@ -44,10 +47,13 @@
     <property name="localRepository" value="/Users/akiraabe/.m2/repository"/>
     <property name="java.vendor.url.bug" value="https://github.com/adoptium/adoptium-support/issues"/>
     <property name="java.io.tmpdir" value="/var/folders/l5/4kstpv9946z__3830l3js51c0000gn/T/"/>
+    <property name="com.zaxxer.hikari.pool_number" value="1"/>
     <property name="java.version" value="21.0.9"/>
     <property name="user.dir" value="/Users/akiraabe/practice/mybatis-learning"/>
     <property name="os.arch" value="aarch64"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="PID" value="7464"/>
+    <property name="CONSOLE_LOG_CHARSET" value="UTF-8"/>
     <property name="native.encoding" value="UTF-8"/>
     <property name="java.library.path" value="/Users/akiraabe/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
     <property name="java.vm.info" value="mixed mode, sharing"/>
@@ -58,9 +64,141 @@
     <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.class.version" value="65.0"/>
   </properties>
-  <testcase name="mapperPackageExists" classname="com.example.mybatislearning.PackageStructureTest" time="0.001"/>
-  <testcase name="entityPackageExists" classname="com.example.mybatislearning.PackageStructureTest" time="0.001"/>
-  <testcase name="testPackageExists" classname="com.example.mybatislearning.PackageStructureTest" time="0.0"/>
-  <testcase name="servicePackageExists" classname="com.example.mybatislearning.PackageStructureTest" time="0.001"/>
-  <testcase name="mappersDirectoryExists" classname="com.example.mybatislearning.PackageStructureTest" time="0.0"/>
+  <testcase name="testGetProjectWithOrganization" classname="com.example.mybatislearning.service.ProjectServiceTest" time="0.007">
+    <system-out><![CDATA[2025-12-21T03:57:52.739+09:00  INFO 7464 --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.example.mybatislearning.service.ProjectServiceTest]: ProjectServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-12-21T03:57:52.739+09:00  INFO 7464 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.example.mybatislearning.MyBatisLearningApplication for test class com.example.mybatislearning.service.ProjectServiceTest
+Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7e76a66f]
+JDBC Connection [HikariProxyConnection@96858414 wrapping conn0: url=jdbc:h2:mem:testdb user=SA] will be managed by Spring
+==>  Preparing: SELECT p.id, p.project_name, p.organization_id, o.id AS org_id, o.name AS org_name, o.description AS org_description FROM projects p INNER JOIN organizations o ON p.organization_id = o.id WHERE p.id = ?
+==> Parameters: 1(Long)
+<==    Columns: ID, PROJECT_NAME, ORGANIZATION_ID, ORG_ID, ORG_NAME, ORG_DESCRIPTION
+<==        Row: 1, Web Application Redesign, 1, 1, Tech Corp, Technology company focused on software development
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7e76a66f]
+Project with Organization via Service: Project{id=1, projectName='Web Application Redesign', organizationId=1, organization=Tech Corp}
+Organization Details: Organization{id=1, name='Tech Corp', description='Technology company focused on software development'}
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7e76a66f]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7e76a66f]
+]]></system-out>
+  </testcase>
+  <testcase name="testGetProjectsByOrganization" classname="com.example.mybatislearning.service.ProjectServiceTest" time="0.003">
+    <system-out><![CDATA[Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@23f8036d]
+JDBC Connection [HikariProxyConnection@31676014 wrapping conn0: url=jdbc:h2:mem:testdb user=SA] will be managed by Spring
+==>  Preparing: SELECT id, project_name, organization_id FROM projects WHERE organization_id = ?
+==> Parameters: 1(Long)
+<==    Columns: ID, PROJECT_NAME, ORGANIZATION_ID
+<==        Row: 1, Web Application Redesign, 1
+<==        Row: 2, Mobile App Development, 1
+<==        Row: 5, New Test Project, 1
+<==        Row: 7, Select Test Project, 1
+<==      Total: 4
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@23f8036d]
+Projects for Organization 1 via Service: [Project{id=1, projectName='Web Application Redesign', organizationId=1, organization=null}, Project{id=2, projectName='Mobile App Development', organizationId=1, organization=null}, Project{id=5, projectName='New Test Project', organizationId=1, organization=null}, Project{id=7, projectName='Select Test Project', organizationId=1, organization=null}]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@23f8036d]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@23f8036d]
+]]></system-out>
+  </testcase>
+  <testcase name="testCreateProject" classname="com.example.mybatislearning.service.ProjectServiceTest" time="0.004">
+    <system-out><![CDATA[Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2b058bfd]
+JDBC Connection [HikariProxyConnection@348817596 wrapping conn0: url=jdbc:h2:mem:testdb user=SA] will be managed by Spring
+==>  Preparing: INSERT INTO projects (project_name, organization_id) VALUES (?, ?)
+==> Parameters: Service Test Project(String), 1(Long)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2b058bfd]
+Created via Service: Project{id=8, projectName='Service Test Project', organizationId=1, organization=null}
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2b058bfd]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2b058bfd]
+]]></system-out>
+  </testcase>
+  <testcase name="testGetProject" classname="com.example.mybatislearning.service.ProjectServiceTest" time="0.003">
+    <system-out><![CDATA[Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@f01fc6d]
+JDBC Connection [HikariProxyConnection@1754081885 wrapping conn0: url=jdbc:h2:mem:testdb user=SA] will be managed by Spring
+==>  Preparing: INSERT INTO projects (project_name, organization_id) VALUES (?, ?)
+==> Parameters: Get Test Project(String), 1(Long)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@f01fc6d]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@f01fc6d] from current transaction
+==>  Preparing: SELECT id, project_name, organization_id FROM projects WHERE id = ?
+==> Parameters: 9(Long)
+<==    Columns: ID, PROJECT_NAME, ORGANIZATION_ID
+<==        Row: 9, Get Test Project, 1
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@f01fc6d]
+Retrieved via Service: Project{id=9, projectName='Get Test Project', organizationId=1, organization=null}
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@f01fc6d]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@f01fc6d]
+]]></system-out>
+  </testcase>
+  <testcase name="testUpdateProject" classname="com.example.mybatislearning.service.ProjectServiceTest" time="0.005">
+    <system-out><![CDATA[Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2842c098]
+JDBC Connection [HikariProxyConnection@1186076210 wrapping conn0: url=jdbc:h2:mem:testdb user=SA] will be managed by Spring
+==>  Preparing: INSERT INTO projects (project_name, organization_id) VALUES (?, ?)
+==> Parameters: Update Test Project(String), 1(Long)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2842c098]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2842c098] from current transaction
+==>  Preparing: UPDATE projects SET project_name = ?, organization_id = ? WHERE id = ?
+==> Parameters: Updated Project via Service(String), 2(Long), 10(Long)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2842c098]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2842c098] from current transaction
+==>  Preparing: SELECT id, project_name, organization_id FROM projects WHERE id = ?
+==> Parameters: 10(Long)
+<==    Columns: ID, PROJECT_NAME, ORGANIZATION_ID
+<==        Row: 10, Updated Project via Service, 2
+<==      Total: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2842c098]
+Updated via Service: Project{id=10, projectName='Updated Project via Service', organizationId=2, organization=null}
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2842c098]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2842c098]
+]]></system-out>
+  </testcase>
+  <testcase name="testDeleteProject" classname="com.example.mybatislearning.service.ProjectServiceTest" time="0.004">
+    <system-out><![CDATA[Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@476c137b]
+JDBC Connection [HikariProxyConnection@1409422014 wrapping conn0: url=jdbc:h2:mem:testdb user=SA] will be managed by Spring
+==>  Preparing: INSERT INTO projects (project_name, organization_id) VALUES (?, ?)
+==> Parameters: Delete Test Project(String), 1(Long)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@476c137b]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@476c137b] from current transaction
+==>  Preparing: DELETE FROM projects WHERE id = ?
+==> Parameters: 11(Long)
+<==    Updates: 1
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@476c137b]
+Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@476c137b] from current transaction
+==>  Preparing: SELECT id, project_name, organization_id FROM projects WHERE id = ?
+==> Parameters: 11(Long)
+<==      Total: 0
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@476c137b]
+Deleted via Service, ID: 11
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@476c137b]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@476c137b]
+]]></system-out>
+  </testcase>
+  <testcase name="testGetAllProjects" classname="com.example.mybatislearning.service.ProjectServiceTest" time="0.003">
+    <system-out><![CDATA[Creating a new SqlSession
+Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2579d8a]
+JDBC Connection [HikariProxyConnection@2116089059 wrapping conn0: url=jdbc:h2:mem:testdb user=SA] will be managed by Spring
+==>  Preparing: SELECT id, project_name, organization_id FROM projects
+==> Parameters: 
+<==    Columns: ID, PROJECT_NAME, ORGANIZATION_ID
+<==        Row: 1, Web Application Redesign, 1
+<==        Row: 2, Mobile App Development, 1
+<==        Row: 3, ERP System Integration, 2
+<==        Row: 5, New Test Project, 1
+<==        Row: 6, Updated Project Name, 2
+<==        Row: 7, Select Test Project, 1
+<==      Total: 6
+Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2579d8a]
+All Projects via Service: [Project{id=1, projectName='Web Application Redesign', organizationId=1, organization=null}, Project{id=2, projectName='Mobile App Development', organizationId=1, organization=null}, Project{id=3, projectName='ERP System Integration', organizationId=2, organization=null}, Project{id=5, projectName='New Test Project', organizationId=1, organization=null}, Project{id=6, projectName='Updated Project Name', organizationId=2, organization=null}, Project{id=7, projectName='Select Test Project', organizationId=1, organization=null}]
+Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2579d8a]
+Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2579d8a]
+]]></system-out>
+  </testcase>
 </testsuite>
