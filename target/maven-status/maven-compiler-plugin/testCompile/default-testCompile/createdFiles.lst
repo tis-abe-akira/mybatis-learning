@@ -1,0 +1,5 @@
+com/example/mybatislearning/DatabaseSchemaTest.class
+com/example/mybatislearning/ApplicationConfigurationTest.class
+com/example/mybatislearning/PackageStructureTest.class
+com/example/mybatislearning/entity/ProjectTest.class
+com/example/mybatislearning/entity/OrganizationTest.class
