@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.mybatislearning.mapper.PhaseMapper">
+
+    <!-- resultMap定義: Phaseフィールドのマッピング -->
+    <resultMap id="phaseResultMap" type="com.example.mybatislearning.entity.Phase">
+        <id property="id" column="id"/>
+        <result property="projectId" column="project_id"/>
+        <result property="phaseType" column="phase_type" javaType="com.example.mybatislearning.enums.PhaseType"/>
+        <result property="plannedStartDate" column="planned_start_date"/>
+        <result property="plannedEndDate" column="planned_end_date"/>
+        <result property="actualStartDate" column="actual_start_date"/>
+        <result property="actualEndDate" column="actual_end_date"/>
+        <result property="status" column="status" javaType="com.example.mybatislearning.enums.PhaseStatus"/>
+        <result property="deliverables" column="deliverables"/>
+        <result property="createdAt" column="created_at"/>
+        <result property="updatedAt" column="updated_at"/>
+    </resultMap>
+
+    <!-- INSERT: useGeneratedKeys="true"でID自動採番 -->
+    <insert id="insert" parameterType="com.example.mybatislearning.entity.Phase"
+            useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO phases (project_id, phase_type, planned_start_date, planned_end_date,
+                            actual_start_date, actual_end_date, status, deliverables, created_at, updated_at)
+        VALUES (#{projectId}, #{phaseType}, #{plannedStartDate}, #{plannedEndDate},
+                #{actualStartDate}, #{actualEndDate}, #{status}, #{deliverables}, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)
+    </insert>
+
+    <!-- SELECT BY ID: パラメータバインディング -->
+    <select id="selectById" parameterType="long" resultMap="phaseResultMap">
+        SELECT id, project_id, phase_type, planned_start_date, planned_end_date,
+               actual_start_date, actual_end_date, status, deliverables, created_at, updated_at
+        FROM phases
+        WHERE id = #{id}
+    </select>
+
+    <!-- SELECT ALL -->
+    <select id="selectAll" resultMap="phaseResultMap">
+        SELECT id, project_id, phase_type, planned_start_date, planned_end_date,
+               actual_start_date, actual_end_date, status, deliverables, created_at, updated_at
+        FROM phases
+    </select>
+
+    <!-- FIND BY PROJECT ID: プロジェクトIDで検索 -->
+    <select id="findByProjectId" parameterType="long" resultMap="phaseResultMap">
+        SELECT id, project_id, phase_type, planned_start_date, planned_end_date,
+               actual_start_date, actual_end_date, status, deliverables, created_at, updated_at
+        FROM phases
+        WHERE project_id = #{projectId}
+    </select>
+
+    <!-- UPDATE -->
+    <update id="update" parameterType="com.example.mybatislearning.entity.Phase">
+        UPDATE phases
+        SET project_id = #{projectId},
+            phase_type = #{phaseType},
+            planned_start_date = #{plannedStartDate},
+            planned_end_date = #{plannedEndDate},
+            actual_start_date = #{actualStartDate},
+            actual_end_date = #{actualEndDate},
+            status = #{status},
+            deliverables = #{deliverables},
+            updated_at = CURRENT_TIMESTAMP
+        WHERE id = #{id}
+    </update>
+
+    <!-- DELETE BY ID -->
+    <delete id="deleteById" parameterType="long">
+        DELETE FROM phases
+        WHERE id = #{id}
+    </delete>
+
+</mapper>

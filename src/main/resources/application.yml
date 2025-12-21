@@ -22,6 +22,9 @@ mybatis:
   # マッパーXMLファイルの場所
   mapper-locations: classpath:mappers/*.xml
 
+  # 型エイリアス設定（Entity/Enum型のパッケージ）
+  type-aliases-package: com.example.mybatislearning.entity,com.example.mybatislearning.enums
+
   # MyBatis設定
   configuration:
     # スネークケース⇔キャメルケース自動変換

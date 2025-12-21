@@ -1,6 +1,8 @@
 package com.example.mybatislearning.mapper;
 
 import com.example.mybatislearning.entity.Project;
+import com.example.mybatislearning.enums.ProjectStatus;
+import com.example.mybatislearning.enums.ProjectType;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -63,4 +65,54 @@ public interface ProjectMapper {
      * @param id 削除するProject ID
      */
     void deleteById(Long id);
+
+    // Phase 3拡張メソッド
+
+    /**
+     * ステータスでProjectを検索
+     *
+     * @param status 検索するステータス
+     * @return 該当するProjectのリスト
+     */
+    List<Project> findByStatus(ProjectStatus status);
+
+    /**
+     * 業界IDでProjectを検索
+     *
+     * @param industryId 検索する業界ID
+     * @return 該当するProjectのリスト
+     */
+    List<Project> findByIndustryId(Long industryId);
+
+    /**
+     * プロジェクト種別でProjectを検索
+     *
+     * @param projectType 検索するプロジェクト種別
+     * @return 該当するProjectのリスト
+     */
+    List<Project> findByProjectType(ProjectType projectType);
+
+    /**
+     * プロジェクトマネージャーIDでProjectを検索
+     *
+     * @param projectManagerId 検索するプロジェクトマネージャーID
+     * @return 該当するProjectのリスト
+     */
+    List<Project> findByProjectManagerId(Long projectManagerId);
+
+    /**
+     * 技術リードIDでProjectを検索
+     *
+     * @param technicalLeadId 検索する技術リードID
+     * @return 該当するProjectのリスト
+     */
+    List<Project> findByTechnicalLeadId(Long technicalLeadId);
+
+    /**
+     * Projectと全てのリレーションシップを取得
+     *
+     * @param id 検索するProject ID
+     * @return Projectとそれに関連する全てのエンティティ、存在しない場合はnull
+     */
+    Project selectProjectWithAllRelations(Long id);
 }
