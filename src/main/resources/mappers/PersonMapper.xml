@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.mybatislearning.mapper.PersonMapper">
+
+    <!-- resultMap定義: カラムとフィールドのマッピング -->
+    <resultMap id="personResultMap" type="com.example.mybatislearning.entity.Person">
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="email" column="email"/>
+        <result property="role" column="role"/>
+        <result property="department" column="department"/>
+        <result property="createdAt" column="created_at"/>
+        <result property="updatedAt" column="updated_at"/>
+    </resultMap>
+
+    <!-- INSERT: useGeneratedKeys="true"でID自動採番 -->
+    <insert id="insert" parameterType="com.example.mybatislearning.entity.Person"
+            useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO persons (name, email, role, department, created_at, updated_at)
+        VALUES (#{name}, #{email}, #{role}, #{department}, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)
+    </insert>
+
+    <!-- SELECT BY ID: パラメータバインディング -->
+    <select id="selectById" parameterType="long" resultMap="personResultMap">
+        SELECT id, name, email, role, department, created_at, updated_at
+        FROM persons
+        WHERE id = #{id}
+    </select>
+
+    <!-- SELECT ALL -->
+    <select id="selectAll" resultMap="personResultMap">
+        SELECT id, name, email, role, department, created_at, updated_at
+        FROM persons
+    </select>
+
+    <!-- FIND BY EMAIL -->
+    <select id="findByEmail" parameterType="string" resultMap="personResultMap">
+        SELECT id, name, email, role, department, created_at, updated_at
+        FROM persons
+        WHERE email = #{email}
+    </select>
+
+    <!-- UPDATE -->
+    <update id="update" parameterType="com.example.mybatislearning.entity.Person">
+        UPDATE persons
+        SET name = #{name},
+            email = #{email},
+            role = #{role},
+            department = #{department},
+            updated_at = CURRENT_TIMESTAMP
+        WHERE id = #{id}
+    </update>
+
+    <!-- DELETE BY ID -->
+    <delete id="deleteById" parameterType="long">
+        DELETE FROM persons
+        WHERE id = #{id}
+    </delete>
+
+</mapper>

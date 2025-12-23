@@ -5,11 +5,25 @@
 
 <mapper namespace="com.example.mybatislearning.mapper.ProjectMapper">
 
-    <!-- resultMap定義: Projectフィールドのマッピング -->
+    <!-- resultMap定義: Projectフィールドのマッピング（Phase 3拡張版） -->
     <resultMap id="projectResultMap" type="com.example.mybatislearning.entity.Project">
         <id property="id" column="id"/>
         <result property="projectName" column="project_name"/>
         <result property="organizationId" column="organization_id"/>
+        <!-- Phase 3拡張フィールド -->
+        <result property="customerName" column="customer_name"/>
+        <result property="industryId" column="industry_id"/>
+        <result property="projectType" column="project_type" javaType="com.example.mybatislearning.enums.ProjectType"/>
+        <result property="status" column="status" javaType="com.example.mybatislearning.enums.ProjectStatus"/>
+        <result property="budget" column="budget"/>
+        <result property="personMonths" column="person_months"/>
+        <result property="teamSize" column="team_size"/>
+        <result property="plannedStartDate" column="planned_start_date"/>
+        <result property="plannedEndDate" column="planned_end_date"/>
+        <result property="actualStartDate" column="actual_start_date"/>
+        <result property="actualEndDate" column="actual_end_date"/>
+        <result property="projectManagerId" column="project_manager_id"/>
+        <result property="technicalLeadId" column="technical_lead_id"/>
     </resultMap>
 
     <!-- resultMapWithAssociation: ProjectとOrganizationの結合マッピング -->
@@ -25,29 +39,39 @@
         </association>
     </resultMap>
 
-    <!-- INSERT: useGeneratedKeys="true"でID自動採番 -->
+    <!-- INSERT: useGeneratedKeys="true"でID自動採番（Phase 3拡張版） -->
     <insert id="insert" parameterType="com.example.mybatislearning.entity.Project"
             useGeneratedKeys="true" keyProperty="id">
-        INSERT INTO projects (project_name, organization_id)
-        VALUES (#{projectName}, #{organizationId})
+        INSERT INTO projects (project_name, organization_id, customer_name, industry_id, project_type, status,
+                              budget, person_months, team_size, planned_start_date, planned_end_date,
+                              actual_start_date, actual_end_date, project_manager_id, technical_lead_id)
+        VALUES (#{projectName}, #{organizationId}, #{customerName}, #{industryId}, #{projectType}, #{status},
+                #{budget}, #{personMonths}, #{teamSize}, #{plannedStartDate}, #{plannedEndDate},
+                #{actualStartDate}, #{actualEndDate}, #{projectManagerId}, #{technicalLeadId})
     </insert>
 
-    <!-- SELECT BY ID -->
+    <!-- SELECT BY ID（Phase 3拡張版） -->
     <select id="selectById" parameterType="long" resultMap="projectResultMap">
-        SELECT id, project_name, organization_id
+        SELECT id, project_name, organization_id, customer_name, industry_id, project_type, status,
+               budget, person_months, team_size, planned_start_date, planned_end_date,
+               actual_start_date, actual_end_date, project_manager_id, technical_lead_id
         FROM projects
         WHERE id = #{id}
     </select>
 
-    <!-- SELECT ALL -->
+    <!-- SELECT ALL（Phase 3拡張版） -->
     <select id="selectAll" resultMap="projectResultMap">
-        SELECT id, project_name, organization_id
+        SELECT id, project_name, organization_id, customer_name, industry_id, project_type, status,
+               budget, person_months, team_size, planned_start_date, planned_end_date,
+               actual_start_date, actual_end_date, project_manager_id, technical_lead_id
         FROM projects
     </select>
 
-    <!-- SELECT BY ORGANIZATION ID -->
+    <!-- SELECT BY ORGANIZATION ID（Phase 3拡張版） -->
     <select id="selectByOrganizationId" parameterType="long" resultMap="projectResultMap">
-        SELECT id, project_name, organization_id
+        SELECT id, project_name, organization_id, customer_name, industry_id, project_type, status,
+               budget, person_months, team_size, planned_start_date, planned_end_date,
+               actual_start_date, actual_end_date, project_manager_id, technical_lead_id
         FROM projects
         WHERE organization_id = #{organizationId}
     </select>
@@ -65,11 +89,24 @@
         WHERE p.id = #{id}
     </select>
 
-    <!-- UPDATE -->
+    <!-- UPDATE（Phase 3拡張版） -->
     <update id="update" parameterType="com.example.mybatislearning.entity.Project">
         UPDATE projects
         SET project_name = #{projectName},
-            organization_id = #{organizationId}
+            organization_id = #{organizationId},
+            customer_name = #{customerName},
+            industry_id = #{industryId},
+            project_type = #{projectType},
+            status = #{status},
+            budget = #{budget},
+            person_months = #{personMonths},
+            team_size = #{teamSize},
+            planned_start_date = #{plannedStartDate},
+            planned_end_date = #{plannedEndDate},
+            actual_start_date = #{actualStartDate},
+            actual_end_date = #{actualEndDate},
+            project_manager_id = #{projectManagerId},
+            technical_lead_id = #{technicalLeadId}
         WHERE id = #{id}
     </update>
 
@@ -78,5 +115,94 @@
         DELETE FROM projects
         WHERE id = #{id}
     </delete>
+
+    <!-- Phase 3拡張: 新規検索メソッド -->
+
+    <!-- FIND BY STATUS -->
+    <select id="findByStatus" resultMap="projectResultMap">
+        SELECT id, project_name, organization_id, customer_name, industry_id, project_type, status,
+               budget, person_months, team_size, planned_start_date, planned_end_date,
+               actual_start_date, actual_end_date, project_manager_id, technical_lead_id
+        FROM projects
+        WHERE status = #{status}
+    </select>
+
+    <!-- FIND BY INDUSTRY ID -->
+    <select id="findByIndustryId" parameterType="long" resultMap="projectResultMap">
+        SELECT id, project_name, organization_id, customer_name, industry_id, project_type, status,
+               budget, person_months, team_size, planned_start_date, planned_end_date,
+               actual_start_date, actual_end_date, project_manager_id, technical_lead_id
+        FROM projects
+        WHERE industry_id = #{industryId}
+    </select>
+
+    <!-- FIND BY PROJECT TYPE -->
+    <select id="findByProjectType" resultMap="projectResultMap">
+        SELECT id, project_name, organization_id, customer_name, industry_id, project_type, status,
+               budget, person_months, team_size, planned_start_date, planned_end_date,
+               actual_start_date, actual_end_date, project_manager_id, technical_lead_id
+        FROM projects
+        WHERE project_type = #{projectType}
+    </select>
+
+    <!-- FIND BY PROJECT MANAGER ID -->
+    <select id="findByProjectManagerId" parameterType="long" resultMap="projectResultMap">
+        SELECT id, project_name, organization_id, customer_name, industry_id, project_type, status,
+               budget, person_months, team_size, planned_start_date, planned_end_date,
+               actual_start_date, actual_end_date, project_manager_id, technical_lead_id
+        FROM projects
+        WHERE project_manager_id = #{projectManagerId}
+    </select>
+
+    <!-- FIND BY TECHNICAL LEAD ID -->
+    <select id="findByTechnicalLeadId" parameterType="long" resultMap="projectResultMap">
+        SELECT id, project_name, organization_id, customer_name, industry_id, project_type, status,
+               budget, person_months, team_size, planned_start_date, planned_end_date,
+               actual_start_date, actual_end_date, project_manager_id, technical_lead_id
+        FROM projects
+        WHERE technical_lead_id = #{technicalLeadId}
+    </select>
+
+    <!-- SELECT PROJECT WITH ALL RELATIONS: JOINクエリでProjectと全リレーションシップを取得 -->
+    <!-- Phase 4で完全版を実装予定。現在はIndustry、ProjectManager、TechnicalLeadのみ -->
+    <resultMap id="projectWithAllRelationsResultMap" type="com.example.mybatislearning.entity.Project" extends="projectResultMap">
+        <!-- Industry Association -->
+        <association property="industry" javaType="com.example.mybatislearning.entity.Industry">
+            <id property="id" column="industry_id"/>
+            <result property="name" column="industry_name"/>
+            <result property="description" column="industry_description"/>
+        </association>
+        <!-- Project Manager (Person) Association -->
+        <association property="projectManager" javaType="com.example.mybatislearning.entity.Person">
+            <id property="id" column="pm_id"/>
+            <result property="name" column="pm_name"/>
+            <result property="email" column="pm_email"/>
+            <result property="role" column="pm_role"/>
+            <result property="department" column="pm_department"/>
+        </association>
+        <!-- Technical Lead (Person) Association -->
+        <association property="technicalLead" javaType="com.example.mybatislearning.entity.Person">
+            <id property="id" column="tl_id"/>
+            <result property="name" column="tl_name"/>
+            <result property="email" column="tl_email"/>
+            <result property="role" column="tl_role"/>
+            <result property="department" column="tl_department"/>
+        </association>
+        <!-- Phase 4以降でcollectionマッピングを追加予定 -->
+    </resultMap>
+
+    <select id="selectProjectWithAllRelations" parameterType="long" resultMap="projectWithAllRelationsResultMap">
+        SELECT p.id, p.project_name, p.organization_id, p.customer_name, p.industry_id, p.project_type, p.status,
+               p.budget, p.person_months, p.team_size, p.planned_start_date, p.planned_end_date,
+               p.actual_start_date, p.actual_end_date, p.project_manager_id, p.technical_lead_id,
+               i.id AS industry_id, i.name AS industry_name, i.description AS industry_description,
+               pm.id AS pm_id, pm.name AS pm_name, pm.email AS pm_email, pm.role AS pm_role, pm.department AS pm_department,
+               tl.id AS tl_id, tl.name AS tl_name, tl.email AS tl_email, tl.role AS tl_role, tl.department AS tl_department
+        FROM projects p
+        LEFT JOIN industries i ON p.industry_id = i.id
+        LEFT JOIN persons pm ON p.project_manager_id = pm.id
+        LEFT JOIN persons tl ON p.technical_lead_id = tl.id
+        WHERE p.id = #{id}
+    </select>
 
 </mapper>

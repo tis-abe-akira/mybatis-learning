@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.mybatislearning.mapper.TechnologyMapper">
+
+    <!-- resultMap定義: カラムとフィールドのマッピング -->
+    <resultMap id="technologyResultMap" type="com.example.mybatislearning.entity.Technology">
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="category" column="category" javaType="com.example.mybatislearning.enums.TechnologyCategory"/>
+        <result property="description" column="description"/>
+        <result property="createdAt" column="created_at"/>
+        <result property="updatedAt" column="updated_at"/>
+    </resultMap>
+
+    <!-- INSERT: useGeneratedKeys="true"でID自動採番 -->
+    <insert id="insert" parameterType="com.example.mybatislearning.entity.Technology"
+            useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO technologies (name, category, description, created_at, updated_at)
+        VALUES (#{name}, #{category}, #{description}, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)
+    </insert>
+
+    <!-- SELECT BY ID: パラメータバインディング -->
+    <select id="selectById" parameterType="long" resultMap="technologyResultMap">
+        SELECT id, name, category, description, created_at, updated_at
+        FROM technologies
+        WHERE id = #{id}
+    </select>
+
+    <!-- SELECT ALL -->
+    <select id="selectAll" resultMap="technologyResultMap">
+        SELECT id, name, category, description, created_at, updated_at
+        FROM technologies
+    </select>
+
+    <!-- FIND BY CATEGORY: Enum型パラメータ -->
+    <select id="findByCategory" resultMap="technologyResultMap">
+        SELECT id, name, category, description, created_at, updated_at
+        FROM technologies
+        WHERE category = #{category}
+    </select>
+
+    <!-- UPDATE -->
+    <update id="update" parameterType="com.example.mybatislearning.entity.Technology">
+        UPDATE technologies
+        SET name = #{name},
+            category = #{category},
+            description = #{description},
+            updated_at = CURRENT_TIMESTAMP
+        WHERE id = #{id}
+    </update>
+
+    <!-- DELETE BY ID -->
+    <delete id="deleteById" parameterType="long">
+        DELETE FROM technologies
+        WHERE id = #{id}
+    </delete>
+
+</mapper>
